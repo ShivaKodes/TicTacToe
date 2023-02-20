@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Merriweather-sans, sans-serif;
+    color: #4c6986;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+
+
+.header>h1 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 500px;
+
+}
+
+.header>button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border: 2px solid #4c6986;
+    border-radius: 50px;
+    background-color: transparent;
+    color: #4c6986;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 30px;
+}
+
+.header>button:hover {
+    color: white;
+    background-color: #4c6986;
+}
+
+.game {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    color: #9a9a9a;
+    font-size: 24px;
+    gap: 20px;
+}
+
+.player-X {
+    flex: 1;
+    border-bottom: 2px solid #4c6986;
+    padding-bottom: 10px;
+}
+
+.player-O {
+    flex: 1;
+    border-bottom: 2px solid #4c6986;
+    padding-bottom: 10px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.game-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    cursor: pointer;
+}
+
+.game-cell:hover {
+    background-color: #eee;
+}
+
+.game-cell:not(:nth-child(3n)) {
+    border-right: 1px solid #9a9a9a;
+}
+
+.game-cell:not(:nth-last-child(-n+3)) {
+    border-bottom: 1px solid #9a9a9a;
+}
+
+.player-X.active {
+    color: #42BED7;
+    border-color: #42BED7;
+}
+
+.player-O.active {
+    color: #D7BAFB;
+    border-color: #D7BAFB;
+}
+
+.tile-x {
+    color: #42BED7;
+}
+
+.tile-o {
+    color: #D7BAFB;
+}
+
+.winning span {
+
+    color: #23CE6B !important;
+}
+
+
+@media (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 0;
+    }
+
+    .header>h1 {
+        font-size: 40px;
+    }
+
+}
